@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alliance 7 Limited - Reliable PCO Car Hire in London</title>
+    <meta name="description" content="Reliable PCO car hire in London.  We offer a wide range of Uber-ready vehicles with flexible rental plans, insurance, and 24/7 support.">
+    <meta name="keywords" content="PCO car hire, London, Uber, rental, car rental, private hire, insurance, flexible plans, 24/7 support, Toyota Prius, Hyundai Ioniq, Vauxhall Zafira">
+    <meta name="author" content="Alliance 7 Limited">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.alliance7limited.com/">
+    <style>
+        /* Basic CSS for layout and responsiveness - You would typically use Tailwind or Bootstrap */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .sticky-header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space out logo and nav/call */
+            align-items: center; /* Vertically center items */
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50; /* Dark blue/grey */
+            display: flex; /* Use flexbox for logo and text */
+            align-items: center; /* Vertically center logo and text */
+            gap: 10px; /* Space between logo and text */
+            white-space: nowrap; /* Prevent text wrapping */
+            padding: 5px 10px;
+            margin-right: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover{
+             transform: scale(1.05);
+        }
+
+        .logo img {
+            max-height: 40px; /* Adjust as needed */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #7f8c8d; /* Light grey */
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db; /* Blue */
+        }
+
+        /* Call Button Styles */
+        .call-button {
+            display: inline-block;
+            background-color: #27ae60;  /* Green */
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .call-button:hover {
+            background-color: #219653; /* Darker green */
+            transform: scale(1.1);
+        }
+
+
+        /* Hero Section with Image Carousel */
+        #hero {
+            position: relative;
+            overflow: hidden;
+            height: 400px; /* Adjust as needed */
+        }
+
+        .hero-carousel {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hero-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center; /* Center text within slide */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn{
+          from { transform: translateY(20px);}
+          to { transform: translateY(0);}
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease, slideIn 0.5s ease;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease, slideIn 0.5s ease 0.2s;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #3498db; /* Blue */
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            animation: fadeIn 1s ease, slideIn 0.5s ease 0.4s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9; /* Darker blue */
+            transform: scale(1.05);
+        }
+
+        /* Hero Slide Indicator */
+        .hero-slide-indicator {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .hero-slide-indicator button {
+            width: 20px; /* Increased width */
+            height: 8px; /* Increased height */
+            border-radius: 4px; /* Half of the height for rounded ends */
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+        }
+
+        .hero-slide-indicator button.active {
+            background-color: white;
+             transform: scale(1.2);
+        }
+
+        .hero-slide-indicator button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.2);
+        }
+
+
+        /* About Us Section */
+        #about {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .about-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .why-choose-us ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .why-choose-us li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .why-choose-us li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60; /* Green */
+        }
+
+        /* Available Cars Section (Scrollable) */
+        #cars {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+        }
+
+        #cars h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            white-space: nowrap; /* Prevent heading from wrapping if car grid is wide */
+        }
+
+        .car-grid {
+            display: flex; /* Use flexbox for horizontal scrolling */
+            gap: 30px;
+            padding-bottom: 20px; /* Space for scrollbar */
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .car-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            min-width: 300px; /* Minimum width for each card */
+            transition: transform 0.3s ease;
+        }
+
+        .car-card:hover {
+              transform: scale(1.05);
+        }
+
+        .car-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .car-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .car-card .price {
+            font-size: 1.1rem;
+            color: #e67e22; /* Orange */
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .car-card .features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .car-card .features li {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .car-card .enquire-button {
+            display: inline-block;
+            background-color: #27ae60; /* Green */
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .car-card .enquire-button:hover {
+            background-color: #219653; /* Darker green */
+             transform: scale(1.1);
+        }
+
+        /* Contact Us Section */
+        #contact {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        #contact h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form input[type="tel"]:focus,
+        .contact-form textarea:focus{
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #3498db; /* Blue */
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #2980b9; /* Darker blue */
+            transform: scale(1.05);
+        }
+
+        .contact-details {
+            text-align: center;
+            color: #555;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #hero {
+                height: auto; /* Adjust hero height for smaller screens */
+            }
+
+            .hero-carousel {
+                flex-direction: column; /* Stack images on smaller screens */
+            }
+
+            .hero-slide {
+                min-height: 300px; /* Adjust slide height */
+                padding: 40px 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .car-grid {
+                display: grid; /* Revert to grid for better mobile layout */
+                grid-template-columns: 1fr;
+                overflow-x: auto; /* Still allow horizontal scroll if needed */
+            }
+            .sticky-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .sticky-header nav{
+                margin-top: 10px;
+                text-align: center;
+            }
+            .sticky-header > div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between, center; width: 100%; margin-right: 150px;">
+                <div class="logo">
+                    <img src="https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/475753448_8950350815086202_879195005964079667_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=QT_UJV7VJ1wQ7kNvwEgmrep&_nc_oc=AdkdhGX9j80izbRyfQMR37ekYyG5Y8ZWYXdbtTSOJNGvIKuNs-QscQ_NSPTgZbIFeQV6KjywaDq6PdKAQsLPSXHs&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=CmpHPOJdwjOzgIE1Yz6MMA&oh=00_AfF8zm6f0ZLb7T4ZDw5xWu6ipNdTvyfpJ0apABTEncuMXg&oe=6807674B" alt="Alliance 7 Logo">
+                    Alliance 7 Limited
+                </div>
+                
+                <div style="display: flex; flex-direction: row; align-items: center; gap: 20px; justify-content: flex-end; width: calc(100% - 180px);">
+                    <nav style="margin-right: 0;">
+                        <ul>
+                            <li><a href="#cars">Available Cars</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <a href="tel:+44[Your Phone Number]" class="call-button">Call Us</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-carousel">
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1471479917193-f00955256257?q=80&w=4331&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="container hero-content">
+                    <h1>Alliance 7 Limited</h1>
+                    <p class="tagline">Reliable PCO Car Hire in London</p>
+                    <a href="#cars" class="cta-button">View Available Cars</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1590362891991-f776e747a588?q=80&w=4138&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="container hero-content">
+                    <h1>Drive with Confidence</h1>
+                    <p class="tagline">Top-Quality PCO Vehicles at Your Service</p>
+                    <a href="#contact" class="cta-button">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1572401611152-cf63d874b019?q=80&w=3992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                <div class="container hero-content">
+                    <h1>Your Partner on the Road</h1>
+                    <p class="tagline">Flexible and Affordable PCO Car Rentals</p>
+                    <a href="#about" class="cta-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide-indicator">
+             <button data-slide="0" class="active"></button>
+             <button data-slide="1"></button>
+             <button data-slide="2"></button>
+        </div>
+    </section>
+
+    <section id="cars">
+        <div class="container">
+            <h2>Available Cars</h2>
+            <div class="car-grid">
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Toyota Prius">
+                    <h3>Toyota Prius</h3>
+                    <p class="price">£250/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Hybrid</li>
+                        <li>✅ Automatic</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1494905998402-395d579af36f?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hyundai Ioniq">
+                    <h3>Hyundai Ioniq</h3>
+                    <p class="price">£270/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Hybrid</li>
+                        <li>✅ Automatic</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1441148345475-03a2e82f9719?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Vauxhall Zafira">
+                    <h3>Vauxhall Zafira</h3>
+                    <p class="price">£280/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ 7 Seater</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D" alt="Mercedes-Benz E-Class">
+                    <h3>Mercedes-Benz E-Class</h3>
+                    <p class="price">£350/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ Executive</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D" alt="BMW 5 Series">
+                    <h3>BMW 5 Series</h3>
+                    <p class="price">£330/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ Executive</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D" alt="Nissan Leaf">
+                    <h3>Nissan Leaf</h3>
+                    <p class="price">£260/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Electric</li>
+                        <li>✅ Automatic</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D" alt="Skoda Octavia">
+                    <h3>Skoda Octavia</h3>
+                    <p class="price">£240/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ Spacious</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D" alt="Ford Galaxy">
+                    <h3>Ford Galaxy</h3>
+                    <p class="price">£300/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ 7 Seater</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxjYXJ8ZW58MHx8MHx8fDA%3D300" alt="Volkswagen Sharan">
+                    <h3>Volkswagen Sharan</h3>
+                    <p class="price">£310/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Automatic</li>
+                        <li>✅ 7 Seater</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://fakeimg.pl/300" alt="Toyota Corolla">
+                    <h3>Toyota Corolla</h3>
+                    <p class="price">£230/week</p>
+                    <ul class="features">
+                        <li>✅ PCO Licensed</li>
+                        <li>✅ Fully Insured</li>
+                        <li>✅ Free Maintenance</li>
+                        <li>✅ Hybrid</li>
+                        <li>✅ Automatic</li>
+                    </ul>
+                    <a href="#contact" class="enquire-button">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about-content" style="margin-top: 50px; margin-bottom: 50px;">
+            <h2>About Us</h2>
+            <p>Alliance 7 Limited is a London-based PCO car hire company offering reliable, well-maintained, and Uber-ready vehicles for private hire drivers. Our goal is to provide a hassle-free rental experience with top-tier customer support.</p>
+            <div class="why-choose-us">
+                <h3>Why Choose Us:</h3>
+                <ul>
+                    <li>Flexible weekly rental plans</li>
+                    <li>Fully insured and licensed PCO cars</li>
+                    <li>24/7 support</li>
+                    <li>Free servicing and maintenance</li>
+                    <li>Easy online booking (coming soon)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-form">
+                <form action="#" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="contact-details">
+                <p>📞 Phone: +44 [Your Phone Number]</p>
+                <p>📧 Email: [Your Email Address]</p>
+                <p>📍 Location: London, UK</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alliance 7 Limited</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Smooth scrolling for the Hero CTA button
+        const heroCTA = document.querySelector('#hero .hero-content .cta-button');
+        if (heroCTA) {
+            heroCTA.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Automatic image carousel for the hero section
+        const heroCarousel = document.querySelector('.hero-carousel');
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        let currentIndex = 0;
+        const slideInterval = 3000; // Time in milliseconds between slides
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % heroSlides.length;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            heroCarousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.hero-slide-indicator button');
+            indicators.forEach((button, index) => {
+                button.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        setInterval(nextSlide, slideInterval);
+
+        // Event listener for indicator clicks
+        document.querySelectorAll('.hero-slide-indicator button').forEach(button => {
+            button.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                currentIndex = slideIndex;
+                updateCarousel();
+            });
+        });
+    </script>
+</body>
+</html>
